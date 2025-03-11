@@ -28,5 +28,17 @@ public class HelloWorld {
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            hljs.highlightAll();
+
+            document.querySelector(".copy-btn").addEventListener("click", () => {
+                const codeBlock = document.querySelector("pre code").innerText;
+                navigator.clipboard.writeText(codeBlock).then(() => {
+                    alert("Code copied to clipboard!");
+                });
+            });
+        });
+    </script>
 </body>
 </html>
